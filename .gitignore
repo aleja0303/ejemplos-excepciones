@@ -1,0 +1,43 @@
+try:
+    # Código que puede generar una excepción
+    resultado = 10 / 0
+except Exception as e:
+    # Manejo de la excepción
+    print("Ha ocurrido un error:", e)
+
+
+try:
+    # Código que puede generar una excepción
+    archivo = open("archivo_inexistente.txt", "r")
+except FileNotFoundError:
+    # Manejo de la excepción específica de archivo no encontrado
+    print("El archivo no se ha encontrado")
+except Exception as e:
+    # Manejo de otras excepciones
+    print("Ha ocurrido un error:", e)
+
+
+try:
+    # Código que puede generar una excepción
+    resultado = 10 / 0
+except (ZeroDivisionError, ArithmeticError):
+    # Manejo de múltiples excepciones
+    print("Error de división por cero o error aritmético")
+except Exception as e:
+    # Manejo de otras excepciones
+    print("Ha ocurrido un error:", e)
+
+
+
+try:
+    # Código que puede generar una excepción
+    resultado = 10 / 2
+except ZeroDivisionError:
+    # Manejo de la excepción de división por cero
+    print("No se puede dividir por cero")
+else:
+    # Se ejecuta si no se genera ninguna excepción
+    print("La división fue exitosa")
+finally:
+    # Se ejecuta siempre, independientemente de si se genera una excepción o no
+    print("Fin del bloque try-except")
